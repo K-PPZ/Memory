@@ -2,9 +2,9 @@ let cards = document.getElementsByClassName("cards");
 let points = document.getElementById("points");
 
 let num = 0;
-points.innerText = num + " / 3";
+points.innerText = num + " / " + cards.length/2;
 
-let colors = ["red", "green", "yellow"];
+let colors = ["red", "green", "yellow", "blue", "orange", "pink"];
 let colors_2 = [];
 let colors_3 = [];
 
@@ -45,7 +45,7 @@ console.log(cards_random);
 function register (cards, cards2) {
     if (cards == cards2) {
         num ++;
-        points.innerText = num + " / " + 3;
+        points.innerText = num + " / " + cards.length/2;
     } else {
         cards.style.backgroundColor = "blue";
         cards2.style.backgroundColor = "blue";
@@ -64,6 +64,11 @@ for (let j = 0; j < cards.length; j++) {
 let value = true;
 
 
+
+
+
+
+
 function first_card (value) {
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("click", () => {
@@ -71,18 +76,15 @@ function first_card (value) {
             cards[i].style.backgroundColor = cards[i].classList[1];
     
             cards1 = cards[i].classList[1];
-            // register(cards1, cards2);
-            console.log("false");
-            value = false;
-            validation(value);
 
+            // register(cards1, cards2);
+            value = false;
+            // console.log(value);
+            verification(value);
         });
     }
-    // if (value == true) {
-    //     second_card(value);
-    // }
 }
-// first_card();
+
 
 function second_card (value) {
     for (let h = 0; h < cards.length; h++) {
@@ -92,23 +94,27 @@ function second_card (value) {
 
 
             cards2 = cards[h].classList[1];
-            register(cards1, cards2);
-
-            console.log("true");
+            // register(cards1, cards2);
 
             value = true;
-            validation(value);
-
+            // console.log(value);
+            verification(value);
         });
     }
 }
 
-function validation (value) {
+let f_cards = first_card(value);
+let s_cards = second_card(value);
+
+function verification (value) {
     if (value) {
-        first_card(value);
+        f_cards;
+        console.log(true);
     }
+    
     if (value == false) {
-        second_card(value);
+        s_cards;
+        console.log(false);
     }
 }
-validation(value);
+verification(value);
