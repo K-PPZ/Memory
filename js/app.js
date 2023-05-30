@@ -4,7 +4,7 @@ let points = document.getElementById("points");
 let num = 0;
 points.innerText = num + " / " + cards.length/2;
 
-let colors = ["red", "green", "yellow", "blue", "orange", "pink"];
+let colors = ["red", "green", "yellow", "blue", "purple", "pink"];
 let colors_2 = [];
 let colors_3 = [];
 
@@ -39,13 +39,11 @@ for (let y = 0; y < colors.length; y++) {
     cards_random.push(colors_2[y]);
     cards_random.push(colors_3[y]);
 }
-console.log(cards_random);
-
-
 
 for (let j = 0; j < cards.length; j++) {
     cards[j].classList.add(cards_random[j]);
 }
+
 
 let cards1;
 
@@ -55,7 +53,6 @@ for (let i = 0; i < cards.length; i++) {
 
         if (cards1) {
             if (cards1.classList[1] == cards[i].classList[1]) {
-                console.log(true);
                 cards[i].disabled = true;
                 cards1.disabled = true;
                 cards1 = null;
