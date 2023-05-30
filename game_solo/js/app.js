@@ -1,8 +1,29 @@
 let cards = document.getElementsByClassName("cards");
 let moves = document.getElementById("num_moves");
 
+let mins = document.getElementById("mins");
+let secs = document.getElementById("secs");
+
+let minutes = 0;
+let secondes = 0;
+
+mins.innerText = minutes;
+secs.innerText = secondes;
+
+setInterval(() => {
+    secondes ++;
+    secs.innerText = secondes;
+
+    if (secondes == 60) {
+        minutes ++;
+        secondes = 0;
+
+        mins.innerText = minutes;
+        secs.innerText = secondes;
+    }
+}, 1000);
+
 let restart = document.getElementById("restart");
-let newgame = document.getElementById("newgame");
 
 restart.addEventListener("click", () => {
     window.location.reload();
