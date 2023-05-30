@@ -1,72 +1,30 @@
-let cards = document.getElementsByClassName("cards");
-let points = document.getElementById("points");
+let inputs_theme = document.getElementsByClassName("inputs_theme");
+let inputs_numbers = document.getElementsByClassName("inputs_numbers");
+let inputs_grid = document.getElementsByClassName("inputs_grid");
 
-let num = 0;
-points.innerText = num + " / " + cards.length/2;
-
-let colors = ["red", "green", "yellow", "blue", "purple", "pink"];
-let colors_2 = [];
-let colors_3 = [];
-
-function cards_colors (colors) {
-    while (colors_2.length < colors.length) {
-
-        let random_colors = Math.floor(Math.random() * (colors.length - 0)) + 0;
-
-        if (colors_2.includes(colors[random_colors])) {
-            random_colors = Math.floor(Math.random() * (colors.length - 0)) + 0;
-        } else {
-            colors_2.push(colors[random_colors]);
+for (let i = 0; i < inputs_theme.length; i++) {
+    inputs_theme[i].addEventListener("click", () => {
+        for (let y = 0; y < inputs_theme.length; y++) {
+            inputs_theme[y].classList.remove("input_active");
         }
-    }
-
-
-    while (colors_3.length < colors.length) {
-
-        let random_colors = Math.floor(Math.random() * (colors.length - 0)) + 0;
-        
-        if (colors_3.includes(colors[random_colors])) {
-            random_colors = Math.floor(Math.random() * (colors.length - 0)) + 0;
-        } else {
-            colors_3.push(colors[random_colors]);
-        }
-    }
-}
-cards_colors(colors);
-
-let cards_random = [];
-for (let y = 0; y < colors.length; y++) {
-    cards_random.push(colors_2[y]);
-    cards_random.push(colors_3[y]);
+        inputs_theme[i].classList.add("input_active");
+    });
 }
 
-for (let j = 0; j < cards.length; j++) {
-    cards[j].classList.add(cards_random[j]);
+for (let i = 0; i < inputs_numbers.length; i++) {
+    inputs_numbers[i].addEventListener("click", () => {
+        for (let y = 0; y < inputs_numbers.length; y++) {
+            inputs_numbers[y].classList.remove("input_active");
+        }
+        inputs_numbers[i].classList.add("input_active");
+    });
 }
 
-
-let cards1;
-
-for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", () => {
-        cards[i].style.backgroundColor = cards[i].classList[1];
-
-        if (cards1) {
-            if (cards1.classList[1] == cards[i].classList[1]) {
-                cards[i].disabled = true;
-                cards1.disabled = true;
-                cards1 = null;
-                num ++;
-                points.innerText = num + " / " + cards.length/2;
-            } else {
-                setTimeout(() => {
-                    cards[i].style.backgroundColor = "#304859";
-                    cards1.style.backgroundColor = "#304859";
-                    cards1 = null;
-                }, 1000);
-            }
-        } else {
-            cards1 = cards[i];
+for (let i = 0; i < inputs_grid.length; i++) {
+    inputs_grid[i].addEventListener("click", () => {
+        for (let y = 0; y < inputs_grid.length; y++) {
+            inputs_grid[y].classList.remove("input_active");
         }
+        inputs_grid[i].classList.add("input_active");
     });
 }
