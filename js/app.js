@@ -42,79 +42,34 @@ for (let y = 0; y < colors.length; y++) {
 console.log(cards_random);
 
 
-function register (cards, cards2) {
-    if (cards == cards2) {
-        num ++;
-        points.innerText = num + " / " + cards.length/2;
-    } else {
-        cards.style.backgroundColor = "blue";
-        cards2.style.backgroundColor = "blue";
-    }
-    // console.log("CARDS " + cards + " " + cards2);
-}
-
-let cards1;
-let cards2;
 
 for (let j = 0; j < cards.length; j++) {
     cards[j].classList.add(cards_random[j]);
 }
 
-// let register;
-let value = true;
+let cards1;
 
+for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", () => {
+        cards[i].style.backgroundColor = cards[i].classList[1];
 
-
-
-
-
-
-function first_card (value) {
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener("click", () => {
-            // console.log(cards[i].classList[1]);
-            cards[i].style.backgroundColor = cards[i].classList[1];
-    
-            cards1 = cards[i].classList[1];
-
-            // register(cards1, cards2);
-            value = false;
-            // console.log(value);
-            verification(value);
-        });
-    }
+        if (cards1) {
+            if (cards1.classList[1] == cards[i].classList[1]) {
+                console.log(true);
+                cards[i].disabled = true;
+                cards1.disabled = true;
+                cards1 = null;
+                num ++;
+                points.innerText = num + " / " + cards.length/2;
+            } else {
+                setTimeout(() => {
+                    cards[i].style.backgroundColor = "#304859";
+                    cards1.style.backgroundColor = "#304859";
+                    cards1 = null;
+                }, 1000);
+            }
+        } else {
+            cards1 = cards[i];
+        }
+    });
 }
-
-
-function second_card (value) {
-    for (let h = 0; h < cards.length; h++) {
-        cards[h].addEventListener("click", () => {
-            // console.log(cards[h].classList[1]);
-            cards[h].style.backgroundColor = cards[h].classList[1];
-
-
-            cards2 = cards[h].classList[1];
-            // register(cards1, cards2);
-
-            value = true;
-            // console.log(value);
-            verification(value);
-        });
-    }
-}
-
-let f_cards = first_card(value);
-let s_cards = second_card(value);
-
-function verification (value) {
-    if (value) {
-        f_cards;
-        console.log(true);
-    }
-    
-    if (value == false) {
-        s_cards;
-        console.log(false);
-    }
-}
-verification(value);
