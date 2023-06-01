@@ -1,0 +1,141 @@
+$police: 'Atkinson Hyperlegible', sans-serif;
+
+@mixin centrer ($justify: center, $direction: column) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+// NORMALISE //
+
+* {
+    box-sizing: border-box;
+    font-family: $police;
+}
+
+// NORMALISE //
+
+
+body {
+    height: 100vh;
+    margin: 0;
+    @include centrer(start, column);
+
+    & header {
+        width: 100%;
+        height: 10%;
+        @include centrer(space-around, row);
+        font-size: 1rem;
+
+        & h1 {
+            color: #152938;
+            width: 50%;
+            font-size: 2.5rem;
+            @include centrer();
+        }
+
+        & div {
+            width: 50%;
+            @include centrer(center, row);
+
+            & button {
+                border: none;
+                border-radius: 50px;
+                font-size: 1rem;
+                margin: 1%;
+                width: 15%;
+                padding: 1.5% 2%;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            & a {
+                border: none;
+                border-radius: 50px;
+                font-size: 1rem;
+                margin: 1%;
+                width: 15%;
+                padding: 1.5% 2%;
+                font-weight: bold;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            & #restart {
+                background-color: #FDA214;
+                color: white;
+            }
+
+            & #restart:hover {
+                background-color: #FFB84A;
+            }
+
+            & #newgame {
+                background-color: #DFE7EC;
+                color: #304859;
+            }
+
+            & #newgame:hover {
+                background-color: #6395B8;
+                color: white;
+            }
+        }
+    }
+
+    & main {
+        width: 100%;
+        height: 80%;
+        @include centrer(center, column);
+        padding: 1%;
+
+        & .line {
+            width: 30%;
+            padding: 1%;
+            @include centrer(space-evenly, row);
+
+            & button {
+                background-color: #304859;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                cursor: pointer;
+                color: white;
+                font-size: 3rem;
+                border: none;
+                font-weight: bold;
+            }
+        }
+    }
+
+    & footer {
+        width: 30%;
+        height: 10%;
+        @include centrer(space-evenly, row);
+        padding: 3% 0;
+
+        & div {
+            @include centrer(space-around, row);
+            background-color: #DFE7EC;
+            width: 40%;
+            border-radius: 10px;
+            padding: 0;
+
+            & h3 {
+                color: #7191A5;
+            }
+
+            p {
+                color: #304859;
+                font-size: 1.7rem;
+                margin: 0;
+                font-weight: bold;
+            }
+
+            & div {
+                height: 100%;
+            }
+        }
+    }
+}

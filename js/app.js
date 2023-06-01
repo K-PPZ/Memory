@@ -28,3 +28,59 @@ for (let i = 0; i < inputs_grid.length; i++) {
         inputs_grid[i].classList.add("input_active");
     });
 }
+
+
+let numbers_player = "btn_1_player";
+let numbers_grids = "4x4";
+link_game(numbers_player, numbers_grids);
+
+let btn_1_player = document.getElementById("btn_1_player");
+btn_1_player.addEventListener("click", () => {
+    numbers_player = "btn_1_player";
+    link_game(numbers_player, numbers_grids);
+});
+
+let btn_2_players = document.getElementById("btn_2_players");
+btn_2_players.addEventListener("click", () => {
+    numbers_player = "game_2_players";
+    link_game(numbers_player, numbers_grids);
+});
+
+let btn_3_players = document.getElementById("btn_3_players");
+btn_3_players.addEventListener("click", () => {
+    numbers_player = "game_3_players";
+    link_game(numbers_player, numbers_grids);
+});
+
+let btn_4_players = document.getElementById("btn_4_players");
+btn_4_players.addEventListener("click", () => {
+    numbers_player = "game_4_players";
+    link_game(numbers_player, numbers_grids);
+});
+
+
+let btn_4x4 = document.getElementById("btn_4x4");
+btn_4x4.addEventListener("click", () => {
+    numbers_grids = "4x4";
+    link_game(numbers_player, numbers_grids);
+});
+
+let btn_6x6 = document.getElementById("btn_6x6");
+btn_6x6.addEventListener("click", () => {
+    numbers_grids = "6x6";
+    link_game(numbers_player, numbers_grids);
+});
+
+let btn_start = document.getElementById("btn_start");
+
+// console.log(numbers_grids);
+// console.log(numbers_player);
+
+
+function link_game (num_player, num_grids) {
+    if (num_player == "btn_1_player") {
+        btn_start.href = `games_solo/game_solo_${num_grids}/game_solo_${num_grids}.html`;
+    } else {
+        btn_start.href = `games_multi/game_multi_${num_grids}/${num_player}_${num_grids}/game_multi_${num_grids}.html`;
+    }
+}

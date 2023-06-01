@@ -33,7 +33,7 @@ restart.addEventListener("click", () => {
 
 let num = 0;
 
-let colors = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+let colors = ["1", "2", "3", "4", "5", "6", "7", "8"];
 let colors_2 = [];
 let colors_3 = [];
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="GAME_2P_6X6">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" lang="sass" href="css/style.scss">
+    <title>GAME_2P_6X6</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>memory</h1>
+
+      <div>
+        <button id="restart">Restart</button>
+        <a href="../index.html" id="newgame">New Game</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="line">
+        <button class="cards"></button>
+        <button class="cards"></button>
+        <button class="cards"></button>
+        <button class="cards"></button>
+      </div>
+
+      <div class="line">
+        <button class="cards"></button>
+        <button class="cards"></button>
+        <button class="cards"></button>
+        <button class="cards"></button>
+      </div>
+
+      <div class="line">
+        <button class="cards"></button>
+        <button class="cards"></button>
+        <button class="cards"></button>
+        <button class="cards"></button>
+      </div>
+
+      <div class="line">
+        <button class="cards"></button>
+        <button class="cards"></button>
+        <button class="cards"></button>
+        <button class="cards"></button>
+      </div>
+    </main>
+
+    <footer>
+      <div id="time">
+        <h3>Time</h3>
+        <div>
+          <p id="mins"></p>
+          <p>:</p>
+          <p id="secs"></p>
+        </div>
+      </div>
+
+      <div id="moves">
+        <h3>Moves</h3>
+        <p id="num_moves">00</p>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
