@@ -1,3 +1,5 @@
+@import url('../../../../grids/grids_4x4/css/style.scss');
+
 $police: 'Atkinson Hyperlegible', sans-serif;
 
 @mixin centrer ($justify: center, $direction: column) {
@@ -89,24 +91,6 @@ body {
         height: 80%;
         @include centrer(center, column);
         padding: 1%;
-
-        & .line {
-            width: 30%;
-            padding: 1%;
-            @include centrer(space-evenly, row);
-
-            & button {
-                background-color: #304859;
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                cursor: pointer;
-                color: white;
-                font-size: 3rem;
-                border: none;
-                font-weight: bold;
-            }
-        }
     }
 
     & footer {

@@ -30,9 +30,9 @@ for (let i = 0; i < inputs_grid.length; i++) {
 }
 
 
-let numbers_player = "btn_1_player";
-let numbers_grids = "4x4";
-link_game(numbers_player, numbers_grids);
+let numbers_player;
+let numbers_grids;
+// link_game(numbers_player, numbers_grids);
 
 let btn_1_player = document.getElementById("btn_1_player");
 btn_1_player.addEventListener("click", () => {
@@ -73,6 +73,11 @@ btn_6x6.addEventListener("click", () => {
 
 let btn_start = document.getElementById("btn_start");
 
+if (numbers_player == null && numbers_grids == null) {
+    link_game("btn_1_player", "4x4");
+} else if (numbers_player == null && numbers_grids != null) {
+    link_game("btn_1_player", "6x6");
+}
 // console.log(numbers_grids);
 // console.log(numbers_player);
 

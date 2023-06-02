@@ -1,3 +1,6 @@
+import Grids_4x4 from '../../../../grids/grids_4x4/js/app';
+new Grids_4x4;
+
 let cards = document.getElementsByClassName("cards");
 let moves = document.getElementById("num_moves");
 
