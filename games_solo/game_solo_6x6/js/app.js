@@ -1,6 +1,6 @@
-import Grids_6x6 from '../../../grids/grids_6x6/js/app';
 import { time } from '../../../game/time';
-new Grids_6x6
+import Grids_6x6 from '../../../grids/grids_6x6/js/app';
+new Grids_6x6;
 
 let cards = document.getElementsByClassName("cards");
 let moves = document.getElementById("num_moves");

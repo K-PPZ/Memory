@@ -13,7 +13,7 @@ secs_win.innerText = secondes;
 export function time (value) {
     if (value) {
         clearInterval(timer);
-        return;
+        return mins;
     }
 
    timer = setInterval(() => {

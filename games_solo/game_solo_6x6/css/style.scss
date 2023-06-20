@@ -24,6 +24,134 @@ body {
     margin: 0;
     @include centrer(start, column);
 
+    & #section_win {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        position: absolute;
+        @include centrer();
+        background-color: rgba(0, 0, 0, 0.3);
+
+        & #case_win {
+            background-color: white;
+            @include centrer(space-between, column);
+            border-radius: 20px;
+            width: 35%;
+            height: 55%;
+            padding: 3% 1%;
+
+            & div {
+                @include centrer(space-around, column);
+                width: 90%;
+            }
+
+            & #div_title_message {
+                height: 30%;
+                @include centrer(space-between, column);
+
+                & h1 {
+                    font-size: 2.5rem;
+                    margin: 0;
+                    color: #152938;
+                }
+    
+                & #message_win {
+                    margin-top: 0;
+                    color: #7191A5;
+                }
+            }
+
+            & #div_time_moves {
+                height: 35%;
+                @include centrer(space-between, column);
+
+                & #time_win, #moves_win {
+                    @include centrer(space-between, row);
+                    width: 100%;
+                    padding: 0 5%;
+                    background-color: #DFE7EC;
+                    border-radius: 10px;
+    
+                    & h3 {
+                        color: #7191A5;
+                        width: 50%;
+                        font-size: 1rem;
+                    }
+        
+                    p {
+                        color: #304859;
+                        font-size: 1.7rem;
+                        margin: 0;
+                        font-weight: bold;
+                    }
+        
+                    & div {
+                        height: 100%;
+                    }
+                }
+
+                & #time_win {
+                    & #min_sec {
+                        @include centrer(end, row);
+                    }
+                }
+            }
+
+            & #btn_setting {
+                width: 90%;
+                height: 20%;
+                @include centrer(space-between, row);
+
+                & button {
+                    border: none;
+                    border-radius: 50px;
+                    font-size: 1rem;
+                    margin: 1%;
+                    width: 45%;
+                    padding: 3% 0%;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+    
+                & a {
+                    border: none;
+                    border-radius: 50px;
+                    font-size: 1rem;
+                    margin: 1%;
+                    width: 45%;
+                    padding: 3% 0%;
+                    font-weight: bold;
+                    cursor: pointer;
+                    text-align: center;
+                    text-decoration: none;
+                }
+    
+                & #restart_win {
+                    background-color: #FDA214;
+                    color: white;
+                }
+    
+                & #restart_win:hover {
+                    background-color: #FFB84A;
+                }
+    
+                & #newgame {
+                    background-color: #DFE7EC;
+                    color: #304859;
+                }
+    
+                & #newgame:hover {
+                    background-color: #6395B8;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    & .win_hidden {
+        visibility: hidden;
+    }
+
     & header {
         width: 100%;
         height: 10%;
@@ -91,119 +219,6 @@ body {
         height: 80%;
         @include centrer(center, column);
         padding: 1%;
-
-        & main {
-            width: 100%;
-            height: 80%;
-            @include centrer(center, column);
-            padding: 1%;
-    
-            & #section_win {
-                width: 100%;
-                height: 100vh;
-                margin: 0;
-                position: absolute;
-                @include centrer();
-                background-color: rgba(0, 0, 0, 0.3);
-    
-                & #case_win {
-                    background-color: white;
-                    @include centrer(space-around, column);
-                    border-radius: 10px;
-                    width: 30%;
-                    height: 50%;
-    
-                    & div {
-                        @include centrer(space-around, row);
-                    }
-    
-                    & h1 {
-                        font-size: 2rem;
-                        color: #152938;
-                    }
-    
-                    & #message_win {
-                        margin-top: -20px;
-                        color: #7191A5;
-                    }
-    
-                    & #time_win, #moves_win {
-                        @include centrer(space-between, row);
-                        width: 90%;
-                        padding: 0 5%;
-                        background-color: #DFE7EC;
-                        border-radius: 10px;
-    
-                        & h3 {
-                            color: #7191A5;
-                        }
-            
-                        p {
-                            color: #304859;
-                            font-size: 1.7rem;
-                            margin: 0;
-                            font-weight: bold;
-                        }
-            
-                        & div {
-                            height: 100%;
-                        }
-                    }
-    
-                    & #btn_setting {
-                        width: 90%;
-                        @include centrer(space-between, row);
-    
-                        & button {
-                            border: none;
-                            border-radius: 50px;
-                            font-size: 1rem;
-                            margin: 1%;
-                            width: 45%;
-                            padding: 1.5% 2%;
-                            font-weight: bold;
-                            cursor: pointer;
-                        }
-            
-                        & a {
-                            border: none;
-                            border-radius: 50px;
-                            font-size: 1rem;
-                            margin: 1%;
-                            width: 45%;
-                            padding: 1.5% 2%;
-                            font-weight: bold;
-                            cursor: pointer;
-                            text-align: center;
-                            text-decoration: none;
-                        }
-            
-                        & #restart_win {
-                            background-color: #FDA214;
-                            color: white;
-                        }
-            
-                        & #restart_win:hover {
-                            background-color: #FFB84A;
-                        }
-            
-                        & #newgame {
-                            background-color: #DFE7EC;
-                            color: #304859;
-                        }
-            
-                        & #newgame:hover {
-                            background-color: #6395B8;
-                            color: white;
-                        }
-                    }
-                }
-            }
-    
-            & .win_hidden {
-                visibility: hidden;
-            }
-        }
     }
 
     & footer {
