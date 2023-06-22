@@ -1,5 +1,4 @@
 import { time } from '../../../game/time';
-import { data } from '../../../game/data';
 import Grids_4x4 from '../../../grids/grids_4x4/js/app';
 new Grids_4x4;
 
@@ -47,7 +46,6 @@ for (let i = 0; i < cards.length; i++) {
                 if (paires == cards.length/2) {
                     section_win.classList.remove("win_hidden");
                     time(true);
-                    console.log(data(secs_win.innerText));
                 }
             } else {
                 setTimeout(() => {
