@@ -36,8 +36,8 @@ body {
             @include centrer(space-between, column);
             border-radius: 20px;
             width: 35%;
-            height: 55%;
-            padding: 3% 1%;
+            height: 70%;
+            padding: 2% 1%;
 
             & div {
                 @include centrer(space-around, column);
@@ -45,7 +45,6 @@ body {
             }
 
             & #div_title_message {
-                height: 30%;
                 @include centrer(space-between, column);
 
                 & h1 {
@@ -61,10 +60,10 @@ body {
             }
 
             & #div_time_moves {
-                height: 35%;
+                height: 80%;
                 @include centrer(space-between, column);
 
-                & #time_win, #moves_win {
+                & #time_win, #moves_win, #best_score {
                     @include centrer(space-between, row);
                     width: 100%;
                     padding: 0 5%;
@@ -86,6 +85,60 @@ body {
         
                     & div {
                         height: 100%;
+                    }
+                }
+
+                & #best_score {
+                    height: 60%;
+                    padding: 1%;
+                    @include centrer(space-between, column);
+                    background-color: #FDA214;
+                    
+                    & h3 {
+                        margin: 0;
+                        color: white;
+                        font-size: 2.5rem;
+                        text-align: center;
+                    }
+
+                    & p {
+                        color: white;
+                        font-size: 2rem;
+                    }
+
+                    & #best_time_moves {
+                        width: 100%;
+                        height: 40%;
+                        @include centrer(space-between, column);
+
+                        & #best_time, #best_moves {
+                            width: 95%;
+                            border-radius: 50px;
+                            padding: 1%;
+                            height: 45%;
+                            @include centrer(space-between, row);
+                            background-color: white;
+                            
+                            & p {
+                                color: #FDA214;
+                                font-size: 1.3rem;
+                            }
+    
+                            & #title_time, #title_moves {
+                                width: 50%;
+                                font-size: 1.5rem;
+                            }
+    
+                            & #best_mins_secs {
+                                width: 50%;
+                                @include centrer(end, row);
+                            }
+    
+                            & #best_num_moves_win {
+                                width: 50%;
+                                @include centrer(end, row);
+                            }
+                        }
                     }
                 }
 

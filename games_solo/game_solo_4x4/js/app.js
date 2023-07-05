@@ -6,6 +6,20 @@ let cards = document.getElementsByClassName("cards");
 let moves = document.getElementById("num_moves");
 let moves_win = document.getElementById("num_moves_win");
 
+let name_player = document.getElementById("name");
+let best_mins = document.getElementById("best_min");
+let best_secs = document.getElementById("best_secs");
+let best_moves = document.getElementById("best_num_moves_win");
+let best_mins_num = 0;
+let best_secs_num = 0;
+let best_moves_num = 0;
+// best_mins.innerText = best_mins_num;
+// best_secs.innerText = best_secs_num;
+// best_moves.innerText = best_moves_num;
+
+
+
+
 let restart = document.getElementById("restart");
 let restart_win = document.getElementById("restart_win");
 restart.addEventListener("click", () => {
@@ -46,6 +60,20 @@ for (let i = 0; i < cards.length; i++) {
                 if (paires == cards.length/2) {
                     section_win.classList.remove("win_hidden");
                     time(true);
+                    localStorage.setItem("best_moves", moves.innerText);
+                    let data_moves = localStorage.getItem("best_moves");
+
+                    // localStorage.setItem("best_secs", secs.innerText);
+                    // let data_secs = localStorage.getItem("best_secs");
+                    // console.log(data_secs_1);
+
+                    localStorage.setItem("best_mins", mins.innerText);
+                    let data_mins = localStorage.getItem("best_mins");
+
+                    if (best_secs_num == 0) {
+                        localStorage.setItem("best_secs", secs.innerText);
+                        let data_secs = localStorage.getItem("best_secs");
+                    }
                 }
             } else {
                 setTimeout(() => {

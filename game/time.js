@@ -10,9 +10,13 @@ secs.innerText = "0" + secondes;
 mins_win.innerText = "0" + minutes;
 secs_win.innerText = "0" + secondes;
 
+
+let best_time = 0;
+
 export function time (value) {
     if (value) {
         clearInterval(timer);
+        localStorage.setItem(best_time, secs);
         return;
     }
 
